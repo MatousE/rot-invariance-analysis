@@ -1,0 +1,43 @@
+image_directory: 'TCGA_KIRC'
+
+output_directory: 'results'
+
+image_level : 1
+
+image_patch_size: 512
+image_patch_samples: 50
+image_patch_crop_size: 256
+
+
+theta_samples: 12
+
+models:
+  - conch
+  - uni
+  - pathdino
+  - hibou_b
+  - hibou_l
+  - phikon
+  - phikon2
+  - prov_gigapath
+  - virchow
+  - virchow2
+  - kaiko_b
+  - kaiko_l
+
+model_parameters:
+  - null
+  - null
+  - 'weights/PathDino512.pth'
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+  - null
+
+
+
