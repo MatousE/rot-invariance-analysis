@@ -11,6 +11,22 @@ from conch.open_clip_custom import create_model_from_pretrained
 from .wrapper_model import *
 from .model_code.PathDino.PathDino import get_pathDino_model
 
+SUPPORTED_MODELS = [
+    'conch',
+    'uni',
+    'pathdino',
+    'hibou_l',
+    'hibou_b',
+    'phikon',
+    'virchow',
+    'virchow2',
+    'hoptimus0',
+    'kaiko_b',
+    'kaiko_l',
+    'prov_gigapath',
+    'phikon2'
+]
+
 
 def load_conch(hf_auth_token=None):
     model, transform = create_model_from_pretrained('conch_ViT-B-16', "hf_hub:MahmoodLab/conch",

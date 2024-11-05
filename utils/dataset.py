@@ -17,7 +17,7 @@ class KIRCDataset(Dataset):
     
     def __getitem__(self, i):
 
-        _, rgba_image, _ = read_wsi(self.case_image_paths[i], level=self.level)
+        rgba_image = read_wsi(self.case_image_paths[i], level=self.level)
 
         wsi_rgb, _, wsi_hsv = convert_to_color_spaces(rgba_image)
 

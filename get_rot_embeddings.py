@@ -11,6 +11,7 @@ from utils import KIRCDataset, model_registry, rotate_crop
 
 class ModelCache:
     """Cache models to avoid redundant loading."""
+
     def __init__(self, models, device):
         self.models = models
         self.device = device
@@ -21,7 +22,7 @@ class ModelCache:
             model, transform, wrapper = model_registry[model_name](model_params)
             self.cache[model_name] = wrapper(model, transform, self.device)
         return self.cache[model_name]
-    
+
 
 def set_seed(seed=0):
     random.seed(seed)
@@ -36,7 +37,7 @@ def set_seed(seed=0):
 
 
 def extract_embeddings(
-    patches, wrapper, theta, crop_size, batch_size=16
+        patches, wrapper, theta, crop_size, batch_size=16
 ):
     embeddings = []
 
@@ -89,8 +90,7 @@ def main(params):
 
         total_slides += 1
         total_patches += len(patches)
-        # thetas = np.linspace(start=0, stop=360, num=theta_samples, endpoint=False)
-        thetas = np.linspace(15, 345, num=12, endpoint=True)
+        thetas = np.linspace(start=0, stop=360, num=theta_samples, endpoint=False)
 
         st = time.time()
 
@@ -103,7 +103,7 @@ def main(params):
                 experiment_name = f"rotate_{int(theta)}"
 
                 embeddings = extract_embeddings(patches=patches,
-                                                wrapper=model_wrapper, 
+                                                wrapper=model_wrapper,
                                                 theta=theta,
                                                 crop_size=[image_patch_crop_size, image_patch_crop_size])
 
@@ -137,6 +137,7 @@ def main(params):
     output_path = os.path.join(output_dir, f"final_embeddings_{formatted_date}.pth")
     print(output_path)
     torch.save(final_embeddings, output_path)
+
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Process some integers.')
