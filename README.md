@@ -1,6 +1,6 @@
 # Are the Latent Representations of Foundation Models for Pathology Invarient to Rotation?
 
-<img src="./assets/distance-plot.svg">
+<img src="./assets/rot-distance-plot.svg">
 
 Code for the MIDL 2025 Short Paper Submission.
 
