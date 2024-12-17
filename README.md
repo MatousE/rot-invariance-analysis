@@ -2,7 +2,6 @@
 
 <img src="./assets/rot-distance-plot.svg">
 
-Code for the MIDL 2025 Short Paper Submission.
 
 ## Requirements
 Developed on 
